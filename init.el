@@ -56,9 +56,9 @@
 (windmove-default-keybindings)
 
 ;; function-args
-;; (require 'function-args)
-;; (fa-config-default)
-;; (define-key c-mode-map  [(tab)] 'company-complete)
+(require 'function-args)
+(fa-config-default)
+(define-key c-mode-map  [(tab)] 'company-complete)
 ;; (define-key c++-mode-map  [(tab)] 'company-complete)
 
 ;; company
@@ -134,6 +134,9 @@
 
 ;; Package: yasnippet
 (require 'yasnippet)
+(require 'helm-c-yasnippet)
+(setq helm-yas-space-match-any-greedy t)
+(global-set-key (kbd "C-c y") 'helm-yas-complete)
 (yas-global-mode 1)
 
 ;; Package: smartparens
